@@ -1,0 +1,90 @@
+import java.io.*;
+import java.util.*;
+public class kickstart_prob
+{
+	public static void main(String[] args) throws NumberFormatException, IOException 
+	{
+		fastscanner fs=new fastscanner();
+		int T=fs.nextInt();
+		for(int i=1;i<=T;i++)
+		{
+			int input[]=new int[3];
+			fs.readArray(input);
+			int a=input[0];
+			int n=input[1];
+			int p=input[2];
+			long res=1,sum=0,num=a;
+			for(int j=1;j<=n;j++)
+			{
+				int power=j;
+				while(power>0)
+				{
+					if(power%2!=0)
+					{
+						res=(res*num)%p;
+						power--;
+					}
+					else
+					{
+					num=(num*num)%p;
+					power/=2;
+					}
+				}
+				sum=res;
+//				System.out.println(sum+" "+res);
+				num=res;
+				res=1;
+			}
+			System.out.println("Case #"+i+": "+(sum));
+		}
+	}
+}
+class fastscanner
+{
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	String next() throws IOException
+	{
+		return br.readLine();
+	}
+	int nextInt() throws NumberFormatException, IOException
+	{
+		return Integer.parseInt(br.readLine());
+	}
+	long nextLong() throws NumberFormatException, IOException
+	{
+		return Long.parseLong(br.readLine());
+	}
+	double nextDouble() throws NumberFormatException, IOException
+	{
+		return Double.parseDouble(br.readLine());
+	}	
+	int[] sort(int arr[])
+	{
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for(int i:arr)list.add(i);
+		Collections.sort(list);
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=list.get(i);
+		}
+		return arr;
+	}
+	int[] readArray(int arr[]) throws IOException
+	{
+		String pass[]=br.readLine().split(" ");
+		for(int i=0;i<pass.length;i++)
+		{
+		   arr[i]=Integer.parseInt(pass[i]);	
+		}
+		return arr;
+	}
+	long[] longreadArray(long arr[]) throws IOException
+	{
+		String pass[]=br.readLine().split(" ");
+		for(int i=0;i<pass.length;i++)
+		{
+		   arr[i]=Long.parseLong(pass[i]);	
+		}
+		return arr;
+	}
+}
