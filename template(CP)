@@ -1,3 +1,4 @@
+package templates;
 import java.io.*;
 import java.util.*;
 public class templates 
@@ -6,13 +7,17 @@ public class templates
 	{
 		PrintWriter out=new PrintWriter(System.out);
 		fastscanner fs=new fastscanner();
-		
+
 		out.close();
 	}
 }
 class fastscanner
 {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	String next() throws IOException
+	{
+		return br.readLine();
+	}
 	int nextInt() throws NumberFormatException, IOException
 	{
 		return Integer.parseInt(br.readLine());
