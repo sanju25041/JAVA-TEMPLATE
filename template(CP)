@@ -67,6 +67,17 @@ class FastScanner
 			}
 			return arr;
 		}
+		char[] charsort(char arr[])
+	        {
+	    	ArrayList<Character> list = new ArrayList<>();
+	    	for(char c:arr)list.add(c);
+	    	Collections.sort(list);
+	    	for(int i=0;i<list.size();i++)
+	    	{
+	    		arr[i]=list.get(i);
+	    	}
+	    	return arr;
+	        }
 		long[] longsort(long arr[])
 		{
 			ArrayList<Long> list = new ArrayList<Long>();
