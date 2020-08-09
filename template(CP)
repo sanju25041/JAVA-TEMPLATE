@@ -1,62 +1,49 @@
 
-import java.io.*;
 import java.util.*;
-public class templates 
+import java.io.*;
+public class actual_template
 {
-	public static void main(String[] args) throws NumberFormatException, IOException 
+	
+	public static void main(String[] args) 
 	{
-		PrintWriter out=new PrintWriter(System.out);
-		fastscanner fs=new fastscanner();
+		FastScanner fs=new FastScanner();
+		
+	}
+}
+class FastScanner 
+{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer("");
+		
+		public String next() {
+			while (!st.hasMoreTokens())
+				try {
+					st=new StringTokenizer(br.readLine());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			return st.nextToken();
+			
+		}
+		
+		public int nextInt() {
+			return Integer.parseInt(next());
+		}
+		
+		public int[] readArray(int n) {
+			int[] a=new int[n];
+			for (int i=0; i<n; i++) a[i]=nextInt();
+			return a;
+		}
+		
+		public long nextLong() {
+			return Long.parseLong(next());
+		}
+		
+		public long[] readLongArray(int n) {
+			long[] a=new long[n];
+			for (int i=0; i<n; i++) a[i]=nextLong();
+			return a;
+		}
+	}
 
-		out.close();
-	}
-}
-class fastscanner
-{
-	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	String next() throws IOException
-	{
-		return br.readLine();
-	}
-	int nextInt() throws NumberFormatException, IOException
-	{
-		return Integer.parseInt(br.readLine());
-	}
-	long nextLong() throws NumberFormatException, IOException
-	{
-		return Long.parseLong(br.readLine());
-	}
-	double nextDouble() throws NumberFormatException, IOException
-	{
-		return Double.parseDouble(br.readLine());
-	}	
-	int[] sort(int arr[])
-	{
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		for(int i:arr)list.add(i);
-		Collections.sort(list);
-		for(int i=0;i<arr.length;i++)
-		{
-			arr[i]=list.get(i);
-		}
-		return arr;
-	}
-	int[] readArray(int arr[]) throws IOException
-	{
-		String pass[]=br.readLine().split(" ");
-		for(int i=0;i<pass.length;i++)
-		{
-		   arr[i]=Integer.parseInt(pass[i]);	
-		}
-		return arr;
-	}
-	long[] longreadArray(long arr[]) throws IOException
-	{
-		String pass[]=br.readLine().split(" ");
-		for(int i=0;i<pass.length;i++)
-		{
-		   arr[i]=Long.parseLong(pass[i]);	
-		}
-		return arr;
-	}
-}
