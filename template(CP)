@@ -1,7 +1,11 @@
+
 import java.util.*;
 import java.io.*;
-public class actual_template{
-	
+public class actual_template
+{
+	static final int mod=(int)1e9+7;
+	static final int inf=(int)1e9;
+	static final int INF=(int)1e18;
 	public static void main(String[] args)
 	{
 		FastScanner fs=new FastScanner();
@@ -12,7 +16,6 @@ class FastScanner
 {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st=new StringTokenizer("");
-		
 		public String next() 
 		{
 			while (!st.hasMoreTokens())
