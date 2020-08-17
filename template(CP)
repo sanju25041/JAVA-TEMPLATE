@@ -1,7 +1,6 @@
-
 import java.util.*;
 import java.io.*;
-public class actual_template
+public class template
 {
 	static final int mod=(int)1e9+7;
 	static final int inf=(int)1e9;
@@ -9,7 +8,9 @@ public class actual_template
 	public static void main(String[] args)
 	{
 		FastScanner fs=new FastScanner();
+		PrintWriter out = new PrintWriter(System.out);
 		
+		out.close();
 	}
 }
 class FastScanner 
