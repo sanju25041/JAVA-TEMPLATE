@@ -28,6 +28,18 @@ class FastScanner
 			return st.nextToken();
 			
 		}
+		public int nextInt()
+		{
+			return Integer.parseInt(next());
+		}
+		public long nextLong()
+		{
+			return Long.parseLong(next());
+		}
+		public double nextDouble()
+		{
+			return Double.parseDouble(next());
+		}
 		long pow(long x,long n)
 		{
 			long res=1;
@@ -93,28 +105,18 @@ class FastScanner
 			}
 			return arr;
 		}
-		public int nextInt() 
+		int[] readArray(int n)
 		{
-			return Integer.parseInt(next());
-		}
-		public int[] readArray(int n)
-		{
-			int[] arr=new int[n];
-			for (int i=0; i<n; i++) arr[i]=nextInt();
+			int arr[]=new int[n];
+			for(int i=0;i<n;i++)
+				arr[i]=nextInt();
 			return arr;
-		}	
-		public long nextLong()
-		{
-			return Long.parseLong(next());
 		}
-		public double nextDouble()
+		long[] longreadArray(int n)
 		{
-			return Double.parseDouble(next());
-		}
-		public long[] longreadArray(int n) 
-		{
-			long[] a=new long[n];
-			for (int i=0; i<n; i++) a[i]=nextLong();
-			return a;
+			long arr[]=new long[n];
+			for(int i=0;i<n;i++)
+				arr[i]=nextLong();
+			return arr;
 		}
 }
