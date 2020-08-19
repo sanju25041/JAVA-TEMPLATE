@@ -4,19 +4,19 @@ public class template
 {
 	static final int mod=(int)1e9+7;
 	static final int inf=(int)1e9;
-	static final int INF=(int)1e18;
+	static final long INF=(long)1e18;
 	public static void main(String[] args)
 	{
 		FastScanner fs=new FastScanner();
-		PrintWriter out = new PrintWriter(System.out);
 		
-		out.close();
+		
+		
 	}
 }
 class FastScanner 
 {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st=new StringTokenizer("");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer("");
 		public String next() 
 		{
 			while (!st.hasMoreTokens())
@@ -28,17 +28,27 @@ class FastScanner
 			return st.nextToken();
 			
 		}
-		public int nextInt()
+		ArrayList<Integer> sieve(int n)
 		{
-			return Integer.parseInt(next());
-		}
-		public long nextLong()
-		{
-			return Long.parseLong(next());
-		}
-		public double nextDouble()
-		{
-			return Double.parseDouble(next());
+			ArrayList<Integer> primes = new ArrayList<Integer>();
+			boolean arr[]=new boolean[n+1];
+			Arrays.fill(arr,true);
+			arr[0]=arr[1]=false;
+			for(int i=2;i*i<=n;i++)
+			{
+				if(arr[i]==true)
+				{
+					for(int j=i*i;j<arr.length;j+=i)
+					{
+						arr[j]=false;
+					}
+				}
+			}
+			for(int i=0;i<arr.length;i++)
+			{
+				if(arr[i]==true)primes.add(i);
+			}
+			return primes;
 		}
 		long pow(long x,long n)
 		{
@@ -105,18 +115,24 @@ class FastScanner
 			}
 			return arr;
 		}
-		int[] readArray(int n)
+		public int nextInt() 
 		{
-			int arr[]=new int[n];
-			for(int i=0;i<n;i++)
-				arr[i]=nextInt();
-			return arr;
+			return Integer.parseInt(next());
 		}
-		long[] longreadArray(int n)
+		public int[] readArray(int n)
 		{
-			long arr[]=new long[n];
-			for(int i=0;i<n;i++)
-				arr[i]=nextLong();
+			int[] arr=new int[n];
+			for (int i=0; i<n; i++) arr[i]=nextInt();
 			return arr;
+		}	
+		public long nextLong()
+		{
+			return Long.parseLong(next());
+		}
+		public long[] longreadArray(int n) 
+		{
+			long[] a=new long[n];
+			for (int i=0; i<n; i++) a[i]=nextLong();
+			return a;
 		}
 }
