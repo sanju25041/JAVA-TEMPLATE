@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 public class template
@@ -8,9 +9,6 @@ public class template
 	public static void main(String[] args)
 	{
 		FastScanner fs=new FastScanner();
-		
-		
-		
 	}
 }
 class FastScanner 
@@ -27,39 +25,6 @@ class FastScanner
 				}
 			return st.nextToken();
 			
-		}
-		
-		long pow(long x,long n)
-		{
-			long res=1;
-			while(n>0)
-			{
-			   	if(n%2!=0)
-			   	{
-			   		res=(res*x);n--;
-			   	}
-			   	else
-			   	{
-			   		x=(x*x);n/=2;
-			   	}
-			}
-			return res;
-		}
-		int gcd(int a,int b)
-		{
-			if(b==0)
-			{
-				return a;
-			}
-			return gcd(b,a%b);
-		}
-		long longgcd(long a,long b)
-		{
-			if(b==0)
-			{
-				return a;
-			}
-			return longgcd(b,a%b);
 		}
 		int[] sort(int arr[])
 		{
