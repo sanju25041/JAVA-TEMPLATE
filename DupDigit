@@ -1,0 +1,62 @@
+import java.util.*;
+public class NextProgram
+{
+	static int n;
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		 n=in.nextInt();
+		DupDigit obj1=new DupDigit(n);
+		while(true)
+		{
+			int num=in.nextInt();
+			if(!obj1.add(num))break;
+		}
+		obj1.sort();
+	}
+}
+class DupDigit
+{
+	int n;int arr[];int ind;
+	DupDigit(int n)
+	{
+		this.n=n;arr=new int[n];ind=0;
+	}
+	public void sort()
+	{
+		for(int i=1;i<arr.length;i++)
+		{
+			int key=arr[i];int j=i-1;
+			while(j>=0 && arr[j]<key)
+			{
+				arr[j+1]=arr[j];j--;
+			}
+			arr[j+1]=key;
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+	public  void display()
+	{
+		System.out.println(Arrays.toString(arr));
+	}
+	public boolean add(int num)
+	{
+		if(isValid(num))
+		{
+			arr[ind]=num;ind++;if(ind==n) {return false;}
+		}
+		return true;
+	}
+	public static boolean isValid(int num)
+	{
+		int cnt[]=new int[10];
+		while(num>0)
+		{
+			cnt[num%10]++;num/=10;
+		}
+		for(int i=0;i<=9;i++)
+		{
+			if(cnt[i]>=2)return true;
+		}
+		return false;
+	}
+}
